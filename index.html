@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resizable Sortable Table</title>
+  <link rel="preload" as="image" href="asc.svg">
+  <link rel="preload" as="image" href="desc.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Research Library</h1>
+    <div class="table-wrapper">
+      <div id="table" class="table" role="table" aria-label="Research files">
+        <div class="thead" role="rowgroup">
+          <div class="tr" role="row">
+            <div class="th resizable" data-col="title" role="columnheader" aria-sort="none">
+              <button class="th-content" type="button">Title</button>
+              <span class="resize-handle" aria-hidden="true"></span>
+            </div>
+            <div class="th resizable" data-col="type" role="columnheader" aria-sort="none">
+              <button class="th-content" type="button">Type</button>
+              <span class="resize-handle" aria-hidden="true"></span>
+            </div>
+            <div class="th resizable" data-col="owner" role="columnheader" aria-sort="none">
+              <button class="th-content" type="button">Owner</button>
+              <span class="resize-handle" aria-hidden="true"></span>
+            </div>
+            <div class="th resizable" data-col="created" role="columnheader" aria-sort="none">
+              <button class="th-content" type="button">Date created</button>
+              <span class="resize-handle" aria-hidden="true"></span>
+            </div>
+            <div class="th resizable" data-col="updated" role="columnheader" aria-sort="descending">
+              <button class="th-content" type="button">Date updated</button>
+              <span class="resize-handle" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+        <div class="tbody" role="rowgroup" id="tbody">
+          <!-- Rows injected by JS -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <template id="row-template">
+    <div class="tr" role="row">
+      <div class="td" data-col="title" role="cell"></div>
+      <div class="td" data-col="type" role="cell"></div>
+      <div class="td" data-col="owner" role="cell"></div>
+      <div class="td" data-col="created" role="cell"></div>
+      <div class="td" data-col="updated" role="cell"></div>
+    </div>
+  </template>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
+
+
